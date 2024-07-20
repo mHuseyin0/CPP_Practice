@@ -4,11 +4,19 @@
 #include "DVDStoreManagementSystem.h"
 
 DVDStoreManagementSystem::DVDStoreManagementSystem(){
-    
+    this->dvdCount = 0;
+    this->customerCount = 0;
+    this->transactionCount = 0;
+
+    this->dvdList = new DVD* [10];
+    this->customerList = new Customer* [10];
+    this->transactionHistory = new string* [10];
 }
 
 DVDStoreManagementSystem::~DVDStoreManagementSystem(){
-    
+    delete[] dvdList;
+    delete[] customerList;
+    delete[] transactionHistory;
 }
 
 void DVDStoreManagementSystem::addDVD( const string serialNo, const string title, const string director ){
