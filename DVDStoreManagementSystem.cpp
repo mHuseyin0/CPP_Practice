@@ -1,6 +1,7 @@
 #ifndef DVDSTOREMANAGEMENTSYSTEM_H
 #define DVDSTOREMANAGEMENTSYSTEM_H
 
+#include <cmath>
 #include "DVDStoreManagementSystem.h"
 
 DVDStoreManagementSystem::DVDStoreManagementSystem(){
@@ -20,7 +21,50 @@ DVDStoreManagementSystem::~DVDStoreManagementSystem(){
 }
 
 void DVDStoreManagementSystem::addDVD( const string serialNo, const string title, const string director ){
-    
+    int first = 0;
+    int last = dvdCount - 1;
+    int mid;
+
+    int currentMid;
+    int serialInt = (int) serialNo;
+    bool found = false;
+    while (!found && last >= first) {
+        mid = (first +  last) / 2;
+        currentMid = (int) (*dvdList[mid]).getSerialNumber(); 
+        if (currentMid == serialInt) {
+            found = true;
+        }
+        else if (currentMid > serialInt) {
+
+            last = mid - 1;
+        }
+        else {
+            first = mid + 1;
+        }
+    }
+
+    if(found){
+        return;
+    }
+
+    int insertIndex;
+
+
+    DVD newDVD(serialNo, title, director);
+    dvdList[dvdCount++] = &newDVD;
+
+    // Array is expanded whenever expand count reaches an integer
+    double expandCount = log2(dvdCount / 10) + 1;
+    if (ceil(expandCount) == floor(expandCount)) {
+        newDVDList = new DVD** [2 * dvdCount];
+
+        for (int i = 0; i < dvdCount; i++) {
+            newDVDList[i] = dvdList[i];
+        }
+
+        delete[] dvdList;
+        this->dvdList = newDVDList;
+    }
 }
 
 void DVDStoreManagementSystem::removeDVD( const string serialNo ){
