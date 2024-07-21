@@ -15,7 +15,7 @@ function compileCode() {
 
     echo "Compiling for $os."
 
-    g++ *.cpp -Wall -O -ansi -o "$os" &&
+    g++ -std=c++17 *.cpp -Wall -O -ansi -o "$os" &&
         if [[ $os == "Android" ]]; then
             echo "Valgrind will not be executed since you are on android. Finishing."
             return 0

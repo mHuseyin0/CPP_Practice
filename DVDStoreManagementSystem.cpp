@@ -1,9 +1,12 @@
 #ifndef DVDSTOREMANAGEMENTSYSTEM_H
 #define DVDSTOREMANAGEMENTSYSTEM_H
 
+#include <iostream>
+#include <string>
 #include <cmath>
 #include "DVDStoreManagementSystem.h"
 
+using namespace std;
 DVDStoreManagementSystem::DVDStoreManagementSystem(){
     this->dvdCount = 0;
     this->customerCount = 0;
@@ -21,24 +24,24 @@ DVDStoreManagementSystem::~DVDStoreManagementSystem(){
 }
 
 void DVDStoreManagementSystem::addDVD( const string serialNo, const string title, const string director ){
-    int index = DVDSearch(serialNo)
-    string currentMid = (*dvdList[index]).getSerialNumber();
-    int serialInt = (int) serialNo;
+    int index = DVDSearch(serialNo);
+    int currentMid = stoi((*dvdList[index]).getSerialNumber());
+    int serialInt = stoi(serialNo);
 
-      // Duplicate found
-    if(currentMid == serialNo){
+    // Duplicate found
+    if(currentMid == serialInt){
         return;
     }
 
     // Find insert index (It has to be next to the last found middle element)
-    int insertIndex = mid - 1;
+    int insertIndex = index - 1;
     if (currentMid < serialInt) {
-      insertIndex = mid + 1;
+      insertIndex = index + 1;
     }
 
     // Shift array if needed
     if (insertIndex < dvdCount) {
-      for (i = dvdCount - 1; i >= insertIndex; i--) {
+      for (int i = dvdCount - 1; i >= insertIndex; i--) {
         dvdList[i+1] = dvdList[i];
       }
     }
@@ -50,7 +53,7 @@ void DVDStoreManagementSystem::addDVD( const string serialNo, const string title
     // Array is expanded whenever expand count reaches an integer
     double expandCount = log2(dvdCount / 10) + 1;
     if (ceil(expandCount) == floor(expandCount)) {
-        newDVDList = new DVD** [2 * dvdCount];
+        DVD** newDVDList = new DVD* [2 * dvdCount];
 
         for (int i = 0; i < dvdCount; i++) {
             newDVDList[i] = dvdList[i];
@@ -62,7 +65,23 @@ void DVDStoreManagementSystem::addDVD( const string serialNo, const string title
 }
 
 void DVDStoreManagementSystem::removeDVD( const string serialNo ){
-    
+    int index = DVDSearch(serialNo);
+
+    int currentMid= stoi((*dvdList[index]).getSerialNumber());
+    int serialInt = stoi(serialNo);
+
+    // No such DVD
+    if(currentMid != serialInt){
+        return;
+    }
+
+    delete dvdList[index];
+
+    for (int i = index; i < dvdCount; i++) {
+        dvdList[i] = dvdList[i + 1];
+    }
+
+    dvdCount--;
 }
 
 void DVDStoreManagementSystem::addCustomer( const int customerID, const string name ){
@@ -107,13 +126,12 @@ int DVDStoreManagementSystem::DVDSearch(const string serialNo){
     int mid;
 
     int currentMid;
-    int serialInt = (int) serialNo;
-    bool found = false;
+    int serialInt = stoi(serialNo);
 
     // Search for a duplicate serialNo via binary search
     while (last >= first) {
         mid = (first +  last) / 2;
-        currentMid = (int) (*dvdList[mid]).getSerialNumber(); 
+        currentMid = stoi((*dvdList[mid]).getSerialNumber()); 
         if (currentMid == serialInt) {
             return mid;
         }
