@@ -21,37 +21,31 @@ DVDStoreManagementSystem::~DVDStoreManagementSystem(){
 }
 
 void DVDStoreManagementSystem::addDVD( const string serialNo, const string title, const string director ){
-    int first = 0;
-    int last = dvdCount - 1;
-    int mid;
-
-    int currentMid;
+    int index = DVDSearch(serialNo)
+    string currentMid = (*dvdList[index]).getSerialNumber();
     int serialInt = (int) serialNo;
-    bool found = false;
-    while (!found && last >= first) {
-        mid = (first +  last) / 2;
-        currentMid = (int) (*dvdList[mid]).getSerialNumber(); 
-        if (currentMid == serialInt) {
-            found = true;
-        }
-        else if (currentMid > serialInt) {
 
-            last = mid - 1;
-        }
-        else {
-            first = mid + 1;
-        }
-    }
-
-    if(found){
+      // Duplicate found
+    if(currentMid == serialNo){
         return;
     }
 
-    int insertIndex;
+    // Find insert index (It has to be next to the last found middle element)
+    int insertIndex = mid - 1;
+    if (currentMid < serialInt) {
+      insertIndex = mid + 1;
+    }
 
+    // Shift array if needed
+    if (insertIndex < dvdCount) {
+      for (i = dvdCount - 1; i >= insertIndex; i--) {
+        dvdList[i+1] = dvdList[i];
+      }
+    }
 
+    // Create DVD and insert it to the correct place
     DVD newDVD(serialNo, title, director);
-    dvdList[dvdCount++] = &newDVD;
+    dvdList[insertIndex] = &newDVD;
 
     // Array is expanded whenever expand count reaches an integer
     double expandCount = log2(dvdCount / 10) + 1;
@@ -105,6 +99,33 @@ void DVDStoreManagementSystem::showCustomer( const int customerID ) const{
 
 void DVDStoreManagementSystem::showTransactionHistory() const{
     
+}
+
+int DVDStoreManagementSystem::DVDSearch(const string serialNo){
+    int first = 0;
+    int last = dvdCount - 1;
+    int mid;
+
+    int currentMid;
+    int serialInt = (int) serialNo;
+    bool found = false;
+
+    // Search for a duplicate serialNo via binary search
+    while (last >= first) {
+        mid = (first +  last) / 2;
+        currentMid = (int) (*dvdList[mid]).getSerialNumber(); 
+        if (currentMid == serialInt) {
+            return mid;
+        }
+        else if (currentMid > serialInt) {
+
+            last = mid - 1;
+        }
+        else {
+            first = mid + 1;
+        }
+    }
+    return mid;
 }
 
 #endif
