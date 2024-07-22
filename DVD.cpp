@@ -10,19 +10,19 @@ DVD::DVD(string serialNum, string title, string director){
     this->rentable = true;
 }
 
-string DVD::getSerialNumber(){
+string DVD::getSerialNumber() const {
     return serialNumber;
 }
 
-string DVD::getDirector(){
+string DVD::getDirector() const {
     return director;
 }
 
-string DVD::getTitle(){
+string DVD::getTitle() const {
     return title;
 }
 
-bool DVD::isRentable(){
+bool DVD::isRentable() const {
     return rentable;
 }
 

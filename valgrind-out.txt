@@ -1,15 +1,87 @@
-==15331== Memcheck, a memory error detector
-==15331== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==15331== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==15331== Command: ./Linux
-==15331== Parent PID: 15294
-==15331== 
-==15331== 
-==15331== HEAP SUMMARY:
-==15331==     in use at exit: 0 bytes in 0 blocks
-==15331==   total heap usage: 17 allocs, 17 frees, 75,274 bytes allocated
-==15331== 
-==15331== All heap blocks were freed -- no leaks are possible
-==15331== 
-==15331== For lists of detected and suppressed errors, rerun with: -s
-==15331== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==16153== Memcheck, a memory error detector
+==16153== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==16153== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==16153== Command: ./Linux
+==16153== Parent PID: 16111
+==16153== 
+==16153== Conditional jump or move depends on uninitialised value(s)
+==16153==    at 0x10A54A: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==  Uninitialised value was created by a stack allocation
+==16153==    at 0x10A4D8: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== Conditional jump or move depends on uninitialised value(s)
+==16153==    at 0x49E2F64: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:143)
+==16153==    by 0x10A58E: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==  Uninitialised value was created by a stack allocation
+==16153==    at 0x10A4D8: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== Conditional jump or move depends on uninitialised value(s)
+==16153==    at 0x49E2F6D: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:149)
+==16153==    by 0x10A58E: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==  Uninitialised value was created by a stack allocation
+==16153==    at 0x10A4D8: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== Conditional jump or move depends on uninitialised value(s)
+==16153==    at 0x49E2F75: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (basic_string.tcc:149)
+==16153==    by 0x10A58E: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==  Uninitialised value was created by a stack allocation
+==16153==    at 0x10A4D8: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== Conditional jump or move depends on uninitialised value(s)
+==16153==    at 0x4842F20: operator new(unsigned long) (vg_replace_malloc.c:487)
+==16153==    by 0x10A58E: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==  Uninitialised value was created by a stack allocation
+==16153==    at 0x10A4D8: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+**16153** new/new[] failed and should throw an exception, but Valgrind
+**16153**    cannot throw exceptions and so is aborting instead.  Sorry.
+==16153==    at 0x484241C: VALGRIND_PRINTF_BACKTRACE (valgrind.h:6818)
+==16153==    by 0x4842FE5: operator new(unsigned long) (vg_replace_malloc.c:487)
+==16153==    by 0x10A58E: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10A4F4: DVD::getSerialNumber[abi:cxx11]() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10BF76: DVDStoreManagementSystem::showAllDVDs() const (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D2DF: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== HEAP SUMMARY:
+==16153==     in use at exit: 176 bytes in 3 blocks
+==16153==   total heap usage: 11 allocs, 8 frees, 75,118 bytes allocated
+==16153== 
+==16153== 16 bytes in 1 blocks are still reachable in loss record 1 of 3
+==16153==    at 0x48445F3: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==16153==    by 0x10C2D7: DVDStoreManagementSystem::addDVD(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D1A0: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== 80 bytes in 1 blocks are still reachable in loss record 2 of 3
+==16153==    at 0x48445F3: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==16153==    by 0x10A5E5: DVDStoreManagementSystem::DVDStoreManagementSystem() (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D0EA: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== 80 bytes in 1 blocks are still reachable in loss record 3 of 3
+==16153==    at 0x48445F3: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==16153==    by 0x10A5F3: DVDStoreManagementSystem::DVDStoreManagementSystem() (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153==    by 0x10D0EA: main (in /home/huseyin/Documents/Backup/Coding/CS_201/Homeworks_1/HW_1/Linux)
+==16153== 
+==16153== LEAK SUMMARY:
+==16153==    definitely lost: 0 bytes in 0 blocks
+==16153==    indirectly lost: 0 bytes in 0 blocks
+==16153==      possibly lost: 0 bytes in 0 blocks
+==16153==    still reachable: 176 bytes in 3 blocks
+==16153==         suppressed: 0 bytes in 0 blocks
+==16153== 
+==16153== For lists of detected and suppressed errors, rerun with: -s
+==16153== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)

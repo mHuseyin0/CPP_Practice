@@ -1,9 +1,5 @@
-#include <iostream>
-#include <string>
-using namespace std;
 #include "Customer.h"
 #include "DVD.h"
-
 
 class DVDStoreManagementSystem {
 
@@ -14,9 +10,9 @@ private:
     
     DVD** dvdList;
     Customer** customerList;
-    string** transactionHistory;
-    
-    int DVDSearch(const string serialNo);
+    string** transactionList;
+    int customerSearch(const int customerID) const;
+    int DVDSearch(const string serialNo) const;
 public:
     DVDStoreManagementSystem();
     ~DVDStoreManagementSystem();

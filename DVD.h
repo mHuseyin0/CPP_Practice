@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using std::string;
 
 class DVD {
     private:
@@ -10,10 +10,10 @@ class DVD {
 
     public:
         DVD(string serialNum, string title, string director);
-        string getSerialNumber();
-        string getTitle();
-        string getDirector();
-        bool isRentable();
+        string getSerialNumber() const;
+        string getTitle() const;
+        string getDirector() const;
+        bool isRentable() const;
         void revertRentable();
 
 };
