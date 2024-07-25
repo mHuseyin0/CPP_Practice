@@ -12,11 +12,23 @@ DVDStoreManagementSystem::DVDStoreManagementSystem(){
     this->transactionCount = 0;
 
     this->dvdList = new DVD* [10];
-        this->customerList = new Customer* [10];
-        this->transactionList = new string* [10];
+    this->customerList = new Customer* [10];
+    this->transactionList = new string* [10];
 }
 
 DVDStoreManagementSystem::~DVDStoreManagementSystem(){
+    for (int i = 0; i < dvdCount; i++) {
+        delete dvdList[i];
+    }
+
+    for (int i = 0; i < customerCount; i++) {
+        delete customerList[i];
+    }
+
+    for (int i = 0; i < transactionCount; i++) {
+        delete transactionList[i];
+    }
+
     delete[] dvdList;
     delete[] customerList;
     delete[] transactionList;
@@ -25,11 +37,13 @@ DVDStoreManagementSystem::~DVDStoreManagementSystem(){
 void DVDStoreManagementSystem::addDVD( const string serialNo, const string title, const string director ){
     int index = DVDSearch(serialNo);
     int insertIndex = 0;
+
     if(index != -1){
-        int currentMid = stoi((*dvdList[index]).getSerialNumber());
+        int currentMid = stoi(dvdList[index]->getSerialNumber());
         int serialInt = stoi(serialNo);
 
         if(currentMid == serialInt){ // Duplicate found
+            cout << "Duplicate DVD found." << endl;
             return;
         }
 
@@ -47,8 +61,8 @@ void DVDStoreManagementSystem::addDVD( const string serialNo, const string title
         }
     }
     // Create DVD and insert it to the correct place
-    DVD newDVD(serialNo, title, director);
-    dvdList[insertIndex] = &newDVD;
+    cout << "Inserting at " << insertIndex << endl;
+    dvdList[insertIndex] = new DVD(serialNo, title, director);
 
     // Array is expanded whenever expand count reaches an integer
     double expandCount = log2(++dvdCount / 10) + 1;
@@ -113,8 +127,7 @@ void DVDStoreManagementSystem::addCustomer( const int customerID, const string n
         }
     }
     // Create DVD and insert it to the correct place
-    Customer newCustomer(customerID, name);
-    customerList[insertIndex] = &newCustomer;
+    customerList[insertIndex] = new Customer(customerID, name);
 
     // Array is expanded whenever expand count reaches an integer
     double expandCount = log2(++customerCount / 10) + 1;
@@ -167,8 +180,7 @@ void DVDStoreManagementSystem::rentDVD( const int customerID, const string seria
     dvd->revertRentable();
     customer->incrementRentedDVDCount();
 
-    string transactionInfo = "Transaction: Rental, Customer: " + to_string(customerID) + ", DVD: " + serialNo;
-    transactionList[transactionCount++] = &transactionInfo;
+    transactionList[transactionCount++] = new string("Transaction: Rental, Customer: " + to_string(customerID) + ", DVD: " + serialNo);
 
     double expandCount = log2(transactionCount / 10) + 1;
     if (ceil(expandCount) == floor(expandCount)) {
@@ -197,8 +209,7 @@ void DVDStoreManagementSystem::returnDVD( const int customerID, const string ser
     dvd->revertRentable();
     customer->decrementRentedDVDCount();
 
-    string transactionInfo = "Transaction: Return, Customer: " + to_string(customerID) + ", DVD: " + serialNo;
-    transactionList[transactionCount++] = &transactionInfo;
+    transactionList[transactionCount++] = new string("Transaction: Return, Customer: " + to_string(customerID) + ", DVD: " + serialNo);
 
     double expandCount = log2(transactionCount / 10) + 1;
     if (ceil(expandCount) == floor(expandCount)) {
@@ -214,7 +225,7 @@ void DVDStoreManagementSystem::returnDVD( const int customerID, const string ser
 }
 
 void DVDStoreManagementSystem::showAllDVDs() const{
-    cout << "DVDs in the system:" << endl;
+    cout << "DVDs in the system:" << dvdCount << endl;
     if(dvdCount == 0){
         cout << "None" << endl;
         return;
@@ -241,7 +252,7 @@ void DVDStoreManagementSystem::showAllCustomers() const{
 void DVDStoreManagementSystem::showDVD( const string serialNo ) const{
     int index = DVDSearch(serialNo);
 
-    if (dvdList[index]->getSerialNumber() != serialNo){
+    if (index == -1 || dvdList[index]->getSerialNumber() != serialNo){
         return;
     }
 
@@ -257,7 +268,7 @@ void DVDStoreManagementSystem::showDVD( const string serialNo ) const{
 void DVDStoreManagementSystem::showCustomer( const int customerID ) const{
     int index = customerSearch(customerID);
 
-    if (customerList[index]->getCustomerID() != customerID){
+    if (index == -1 || customerList[index]->getCustomerID() != customerID){
         return;
     }
 
@@ -277,7 +288,7 @@ void DVDStoreManagementSystem::showTransactionHistory() const{
     }
 
     for (int i = 0; i < transactionCount; i++) {
-        cout << transactionList[i] << endl;
+        cout << *transactionList[i] << endl;
     }
 }
 

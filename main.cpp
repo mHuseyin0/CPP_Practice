@@ -22,7 +22,7 @@ int main() {
     cout << endl;
     dvdsms.showTransactionHistory();
     cout << endl;
-    
+
     // Add some DVDs
     dvdsms.addDVD("001", "Inception", "Christopher Nolan");
     dvdsms.addDVD("002", "The Shawshank Redemption", "Frank Darabont");

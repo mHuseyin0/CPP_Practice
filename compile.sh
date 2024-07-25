@@ -26,7 +26,7 @@ function compileCode() {
 
     valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-origins=yes --log-file=valgrind-out.txt ./$os
     printDash
-    cat valgrind-out.txt
+    #cat valgrind-out.txt
 
     printDash
     echo "Valgrind output saved in valgrind-out.txt. Finishing."
