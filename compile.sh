@@ -26,10 +26,17 @@ function compileCode() {
 
     valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-origins=yes --log-file=valgrind-out.txt ./$os
     printDash
-    #cat valgrind-out.txt
+
+    current=$(date)
+    sed -i "1s/^/$(date) \n/" valgrind-out.txt
+
+    cat valgrind-out.txt
+    ./$os >cpp-out.txt
 
     printDash
-    echo "Valgrind output saved in valgrind-out.txt. Finishing."
+    echo "Valgrind output saved in valgrind-out.txt."
+    echo "C++ output saved in cpp-out.txt."
+    echo "Finishing."
     return 0
 }
 

@@ -7,6 +7,7 @@ class DVD {
         string title;
         string director;
         bool rentable;
+        int clientID;
 
     public:
         DVD(string serialNum, string title, string director);
@@ -14,8 +15,9 @@ class DVD {
         string getTitle() const;
         string getDirector() const;
         bool isRentable() const;
-        void revertRentable();
-
+        int getClientID() const;
+        void rent(int clientID);
+        void returnDVD();
 };
 
 

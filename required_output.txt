@@ -1,0 +1,95 @@
+Initial state:
+DVDs in the system:
+None
+Customers in the system:
+None
+Transactions in the system:
+None
+DVD with serial number 001 successfully added.
+DVD with serial number 002 successfully added.
+DVD with serial number 003 successfully added.
+DVD with serial number 004 successfully added.
+DVD with serial number 005 successfully added.
+After adding DVDs:
+DVDs in the system:
+DVD: 001, Title: Inception, Director: Christopher Nolan, Available
+DVD: 002, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD: 003, Title: Pulp Fiction, Director: Quentin Tarantino, Available
+DVD: 004, Title: The Godfather, Director: Francis Ford Coppola, Available
+DVD: 005, Title: The Dark Knight, Director: Christopher Nolan, Available
+Cannot add DVD. DVD with serial number 003 already exists.
+DVD with serial number 004 successfully removed.
+DVD with serial number 005 successfully removed.
+After removing DVDs:
+DVDs in the system:
+DVD: 001, Title: Inception, Director: Christopher Nolan, Available
+DVD: 002, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD: 003, Title: Pulp Fiction, Director: Quentin Tarantino, Available
+Cannot remove DVD. DVD with serial number 006 not found.
+Customer with ID 1001 successfully added.
+Customer with ID 1002 successfully added.
+Customer with ID 1003 successfully added.
+Customer with ID 1004 successfully added.
+Customer with ID 1005 successfully added.
+After adding customers:
+Customers in the system:
+Customer: 1001, Name: Alice, DVDs Rented: 0
+Customer: 1002, Name: Bob, DVDs Rented: 0
+Customer: 1003, Name: Charlie, DVDs Rented: 0
+Customer: 1004, Name: Diana, DVDs Rented: 0
+Customer: 1005, Name: Edward, DVDs Rented: 0
+Cannot add customer. Customer with ID 1001 already exists.
+Customer with ID 1004 successfully removed.
+Customer with ID 1005 successfully removed.
+After removing customers:
+Customers in the system:
+Customer: 1001, Name: Alice, DVDs Rented: 0
+Customer: 1002, Name: Bob, DVDs Rented: 0
+Customer: 1003, Name: Charlie, DVDs Rented: 0
+Cannot remove customer. Customer with ID 1006 not found.
+DVD with serial number 001 successfully rented by customer with ID 1001.
+DVD with serial number 002 successfully rented by customer with ID 1002.
+DVD with serial number 003 successfully rented by customer with ID 1003.
+After renting DVDs:
+Transactions in the system:
+Transaction: Rental, Customer: 1001, DVD: 001
+Transaction: Rental, Customer: 1002, DVD: 002
+Transaction: Rental, Customer: 1003, DVD: 003
+Cannot rent DVD. DVD with serial number 006 not found.
+Cannot rent DVD. Customer with ID 1006 not found.
+Cannot rent DVD. Customer with ID 1006 and DVD with serial number 006 not found.
+Cannot rent DVD. DVD with serial number 001 is not available.
+DVD with serial number 001 successfully returned by customer with ID 1001.
+DVD with serial number 002 successfully returned by customer with ID 1002.
+After returning DVDs:
+Transactions in the system:
+Transaction: Rental, Customer: 1001, DVD: 001
+Transaction: Rental, Customer: 1002, DVD: 002
+Transaction: Rental, Customer: 1003, DVD: 003
+Transaction: Return, Customer: 1001, DVD: 001
+Transaction: Return, Customer: 1002, DVD: 002
+Cannot return DVD. DVD with serial number 999 not found.
+Cannot return DVD. Customer with ID 999 not found.
+Cannot return DVD. Customer with ID 999 and DVD with serial number 999 not found.
+Cannot return DVD. DVD with serial number 003 not rented by customer with ID 1001.
+Cannot remove DVD. DVD with serial number 003 is currently rented by a customer.
+Cannot remove customer. Customer with ID 1003 has rented DVDs.
+DVD: 002, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD with serial number 999 not found.
+Customer: 1003, Name: Charlie, DVDs Rented: 1
+Customer with ID 999 not found.
+Final state:
+DVDs in the system:
+DVD: 001, Title: Inception, Director: Christopher Nolan, Available
+DVD: 002, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD: 003, Title: Pulp Fiction, Director: Quentin Tarantino, Rented
+Customers in the system:
+Customer: 1001, Name: Alice, DVDs Rented: 0
+Customer: 1002, Name: Bob, DVDs Rented: 0
+Customer: 1003, Name: Charlie, DVDs Rented: 1
+Transactions in the system:
+Transaction: Rental, Customer: 1001, DVD: 001
+Transaction: Rental, Customer: 1002, DVD: 002
+Transaction: Rental, Customer: 1003, DVD: 003
+Transaction: Return, Customer: 1001, DVD: 001
+Transaction: Return, Customer: 1002, DVD: 002

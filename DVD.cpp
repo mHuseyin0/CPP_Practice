@@ -26,7 +26,18 @@ bool DVD::isRentable() const {
     return rentable;
 }
 
-void DVD::revertRentable(){
-    rentable = !rentable;
+void DVD::rent(int id){
+    rentable = false;
+    clientID = id;
 }
+
+void DVD::returnDVD(){
+    rentable = true;
+    clientID = 0;
+}
+
+int DVD::getClientID() const{
+    return clientID;
+}
+
 #endif
