@@ -101,5 +101,68 @@ int main() {
     dvdsms.showAllCustomers();
     cout << endl;
     dvdsms.showTransactionHistory();
+
+    dvdsms.addDVD("004", "Inception", "Christopher Nolan");
+    dvdsms.addDVD("005", "Pulp Fiction", "Quentin Tarantino");
+    dvdsms.addDVD("008", "Schindler's List", "Steven Spielberg");
+    dvdsms.addDVD("020", "Fight Club", "David Fincher");
+
+    dvdsms.addDVD("030", "Forrest Gump", "Robert Zemeckis");
+    dvdsms.addDVD("015", "The Matrix", "Lana Wachowski, Lilly Wachowski");
+    dvdsms.addDVD("023", "The Shawshank Redemption", "Frank Darabont");
+    dvdsms.addDVD("051", "Gladiator", "Ridley Scott");
+
+    dvdsms.addDVD("010", "Titanic", "James Cameron");
+    dvdsms.addDVD("100", "Interstellar", "Christopher Nolan");
+    dvdsms.addDVD("009", "Parasite", "Bong Joon-ho");
+    dvdsms.addDVD("031", "Goodfellas", "Martin Scorsese");
+
+    dvdsms.addCustomer(7001, "Alice");
+    dvdsms.addCustomer(7002, "Bob");
+    dvdsms.addCustomer(7003, "Charlie");
+    dvdsms.addCustomer(3001, "Alice");
+    dvdsms.addCustomer(3002, "Bob");
+    dvdsms.addCustomer(3003, "Charlie");
+    dvdsms.addCustomer(5004, "Diana");
+    dvdsms.addCustomer(5005, "Edward");
+    dvdsms.addCustomer(6004, "Diana");
+    dvdsms.addCustomer(6005, "Edward");
+    dvdsms.addCustomer(6001, "Alice");
+    dvdsms.addCustomer(9002, "Bob");
+    dvdsms.addCustomer(9003, "Charlie");
+    dvdsms.addCustomer(9004, "Diana");
+    dvdsms.addCustomer(8005, "Edward");
+    dvdsms.addCustomer(8001, "Alice");
+    dvdsms.addCustomer(8002, "Bob");
+    dvdsms.addCustomer(2003, "Charlie");
+    dvdsms.addCustomer(2004, "Diana");
+    dvdsms.addCustomer(2005, "Edward");
+
+    dvdsms.rentDVD(1001, "004");
+    dvdsms.rentDVD(1002, "005");
+    dvdsms.rentDVD(1003, "008");
+    dvdsms.rentDVD(1001, "023");
+    dvdsms.rentDVD(1002, "030");
+    dvdsms.rentDVD(1003, "020");
+    dvdsms.rentDVD(1001, "015");
+    dvdsms.rentDVD(1002, "051");
+    dvdsms.rentDVD(1003, "010");
+    dvdsms.rentDVD(1001, "100");
+    dvdsms.rentDVD(1002, "009");
+    dvdsms.rentDVD(1003, "031");
+
+    dvdsms.returnDVD(1001, "004");
+    dvdsms.returnDVD(1002, "005");
+    dvdsms.returnDVD(1003, "008");
+    dvdsms.returnDVD(1002, "030");
+    dvdsms.returnDVD(1001, "023");
+    dvdsms.returnDVD(1002, "051");
+    dvdsms.returnDVD(1001, "023");
+    dvdsms.returnDVD(1002, "009");
+    dvdsms.returnDVD(1001, "100");
+    dvdsms.rentDVD(8001, "100");
+    dvdsms.showAllCustomers();
+    dvdsms.showAllDVDs();
+    dvdsms.showTransactionHistory();
     return 0;
 }

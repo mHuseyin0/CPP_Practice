@@ -125,3 +125,129 @@ Transaction: Rental, Customer: 1002, DVD: 002
 Transaction: Rental, Customer: 1003, DVD: 003
 Transaction: Return, Customer: 1001, DVD: 001
 Transaction: Return, Customer: 1002, DVD: 002
+DVD with serial number 004 successfully added.
+DVD with serial number 005 successfully added.
+DVD with serial number 008 successfully added.
+DVD with serial number 020 successfully added.
+DVD with serial number 030 successfully added.
+DVD with serial number 015 successfully added.
+Expanding DVD array.
+DVD with serial number 023 successfully added.
+DVD with serial number 051 successfully added.
+DVD with serial number 010 successfully added.
+DVD with serial number 100 successfully added.
+DVD with serial number 009 successfully added.
+DVD with serial number 031 successfully added.
+Customer with ID 7001 successfully added.
+Customer with ID 7002 successfully added.
+Customer with ID 7003 successfully added.
+Customer with ID 3001 successfully added.
+Customer with ID 3002 successfully added.
+Customer with ID 3003 successfully added.
+Customer with ID 5004 successfully added.
+Expanding Customer array.
+Customer with ID 5005 successfully added.
+Customer with ID 6004 successfully added.
+Customer with ID 6005 successfully added.
+Customer with ID 6001 successfully added.
+Customer with ID 9002 successfully added.
+Customer with ID 9003 successfully added.
+Customer with ID 9004 successfully added.
+Customer with ID 8005 successfully added.
+Customer with ID 8001 successfully added.
+Customer with ID 8002 successfully added.
+Expanding Customer array.
+Customer with ID 2003 successfully added.
+Customer with ID 2004 successfully added.
+Customer with ID 2005 successfully added.
+DVD with serial number 004 successfully rented by customer with ID 1001.
+DVD with serial number 005 successfully rented by customer with ID 1002.
+DVD with serial number 008 successfully rented by customer with ID 1003.
+DVD with serial number 023 successfully rented by customer with ID 1001.
+DVD with serial number 030 successfully rented by customer with ID 1002.
+Expanding transaction list.
+DVD with serial number 020 successfully rented by customer with ID 1003.
+DVD with serial number 015 successfully rented by customer with ID 1001.
+DVD with serial number 051 successfully rented by customer with ID 1002.
+DVD with serial number 010 successfully rented by customer with ID 1003.
+DVD with serial number 100 successfully rented by customer with ID 1001.
+DVD with serial number 009 successfully rented by customer with ID 1002.
+DVD with serial number 031 successfully rented by customer with ID 1003.
+DVD with serial number 004 successfully returned by customer with ID 1001.
+DVD with serial number 005 successfully returned by customer with ID 1002.
+DVD with serial number 008 successfully returned by customer with ID 1003.
+Expanding transaction list.
+DVD with serial number 030 successfully returned by customer with ID 1002.
+DVD with serial number 023 successfully returned by customer with ID 1001.
+DVD with serial number 051 successfully returned by customer with ID 1002.
+Cannot return DVD. DVD with serial number 023 not rented by customer with ID 1001.
+DVD with serial number 009 successfully returned by customer with ID 1002.
+DVD with serial number 100 successfully returned by customer with ID 1001.
+DVD with serial number 100 successfully rented by customer with ID 8001.
+Customers in the system:
+Customer: 1001, Name: Alice, DVDs Rented: 1
+Customer: 1002, Name: Bob, DVDs Rented: 0
+Customer: 1003, Name: Charlie, DVDs Rented: 4
+Customer: 2003, Name: Charlie, DVDs Rented: 0
+Customer: 2004, Name: Diana, DVDs Rented: 0
+Customer: 2005, Name: Edward, DVDs Rented: 0
+Customer: 3001, Name: Alice, DVDs Rented: 0
+Customer: 3002, Name: Bob, DVDs Rented: 0
+Customer: 3003, Name: Charlie, DVDs Rented: 0
+Customer: 5004, Name: Diana, DVDs Rented: 0
+Customer: 5005, Name: Edward, DVDs Rented: 0
+Customer: 6001, Name: Alice, DVDs Rented: 0
+Customer: 6004, Name: Diana, DVDs Rented: 0
+Customer: 6005, Name: Edward, DVDs Rented: 0
+Customer: 7001, Name: Alice, DVDs Rented: 0
+Customer: 7002, Name: Bob, DVDs Rented: 0
+Customer: 7003, Name: Charlie, DVDs Rented: 0
+Customer: 8001, Name: Alice, DVDs Rented: 1
+Customer: 8002, Name: Bob, DVDs Rented: 0
+Customer: 8005, Name: Edward, DVDs Rented: 0
+Customer: 9002, Name: Bob, DVDs Rented: 0
+Customer: 9003, Name: Charlie, DVDs Rented: 0
+Customer: 9004, Name: Diana, DVDs Rented: 0
+DVDs in the system:
+DVD: 001, Title: Inception, Director: Christopher Nolan, Available
+DVD: 002, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD: 003, Title: Pulp Fiction, Director: Quentin Tarantino, Rented
+DVD: 004, Title: Inception, Director: Christopher Nolan, Available
+DVD: 005, Title: Pulp Fiction, Director: Quentin Tarantino, Available
+DVD: 008, Title: Schindler's List, Director: Steven Spielberg, Available
+DVD: 009, Title: Parasite, Director: Bong Joon-ho, Available
+DVD: 010, Title: Titanic, Director: James Cameron, Rented
+DVD: 015, Title: The Matrix, Director: Lana Wachowski, Lilly Wachowski, Rented
+DVD: 020, Title: Fight Club, Director: David Fincher, Rented
+DVD: 023, Title: The Shawshank Redemption, Director: Frank Darabont, Available
+DVD: 030, Title: Forrest Gump, Director: Robert Zemeckis, Available
+DVD: 031, Title: Goodfellas, Director: Martin Scorsese, Rented
+DVD: 051, Title: Gladiator, Director: Ridley Scott, Available
+DVD: 100, Title: Interstellar, Director: Christopher Nolan, Rented
+Transactions in the system:
+Transaction: Rental, Customer: 1001, DVD: 001
+Transaction: Rental, Customer: 1002, DVD: 002
+Transaction: Rental, Customer: 1003, DVD: 003
+Transaction: Return, Customer: 1001, DVD: 001
+Transaction: Return, Customer: 1002, DVD: 002
+Transaction: Rental, Customer: 1001, DVD: 004
+Transaction: Rental, Customer: 1002, DVD: 005
+Transaction: Rental, Customer: 1003, DVD: 008
+Transaction: Rental, Customer: 1001, DVD: 023
+Transaction: Rental, Customer: 1002, DVD: 030
+Transaction: Rental, Customer: 1003, DVD: 020
+Transaction: Rental, Customer: 1001, DVD: 015
+Transaction: Rental, Customer: 1002, DVD: 051
+Transaction: Rental, Customer: 1003, DVD: 010
+Transaction: Rental, Customer: 1001, DVD: 100
+Transaction: Rental, Customer: 1002, DVD: 009
+Transaction: Rental, Customer: 1003, DVD: 031
+Transaction: Return, Customer: 1001, DVD: 004
+Transaction: Return, Customer: 1002, DVD: 005
+Transaction: Return, Customer: 1003, DVD: 008
+Transaction: Return, Customer: 1002, DVD: 030
+Transaction: Return, Customer: 1001, DVD: 023
+Transaction: Return, Customer: 1002, DVD: 051
+Transaction: Return, Customer: 1002, DVD: 009
+Transaction: Return, Customer: 1001, DVD: 100
+Transaction: Rental, Customer: 8001, DVD: 100

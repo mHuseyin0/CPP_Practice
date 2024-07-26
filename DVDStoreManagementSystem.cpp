@@ -220,7 +220,7 @@ void DVDStoreManagementSystem::rentDVD( const int customerID, const string seria
     double expandCount = log2(transactionCount / 10.0) + 1;
     if (ceil(expandCount) == floor(expandCount) && expandCount > 0) {
         string** newTransactionList = new string* [2 * transactionCount];
-
+        cout << "Expanding transaction list." << endl;
         for (int i = 0; i < transactionCount; i++) {
             newTransactionList[i] = transactionList[i];
         }
